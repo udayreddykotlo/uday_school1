@@ -1,0 +1,10 @@
+{% extends 'home.html'%}
+{% block content %}
+<<h3>Are you surewant to delete ?</h3>
+<<form  method="post">
+  {% csrf_token %}
+  <<input type="submit" name="" value="delete">
+    <a href="{% url 'curriculam:lession_detail' standard=lessions.Standard.slug subject=lessions.subject.slug slug=lessions.slug %}">Cancel Delete</a>
+
+</form>
+{% endblock%}

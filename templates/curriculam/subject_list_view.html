@@ -1,0 +1,16 @@
+{%  extends 'home.html' %}
+
+{% block content %}
+{%for subject in standards.subjects.all %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{subject.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Discription:{{subject.description}} </h6>
+    <p class="card-text">For {{subject.name}} claesses click below link</p>
+    <a href="{% url 'curriculam:lession_list' slug=subject.slug standard=standards.slug %}">{{subject.name}}</a>
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
